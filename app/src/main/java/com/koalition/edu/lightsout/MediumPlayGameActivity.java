@@ -674,7 +674,8 @@ public class MediumPlayGameActivity extends Activity {
                         streakImageView.setImageResource(R.drawable.everything_txt);
                         streakImageView.startAnimation(freezeFadeoutAnim);
                         streakImageView.setVisibility(ImageView.INVISIBLE);
-                        randomizeAllRoomStatus();
+                        //randomizeAllRoomStatus();
+                        refreshSwitches();
                         RANDOMIZE_COUNTER--;
                         RANDOMIZE_SPEED = 1300;
                     }

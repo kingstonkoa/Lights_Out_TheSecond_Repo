@@ -604,7 +604,8 @@ public class EasyPlayGameActivity extends Activity {
                         streakImageView.setImageResource(R.drawable.everything_txt);
                         streakImageView.startAnimation(freezeFadeoutAnim);
                         streakImageView.setVisibility(ImageView.INVISIBLE);
-                        randomizeAllRoomStatus();
+                        //randomizeAllRoomStatus();
+                        refreshSwitches();
                         RANDOMIZE_COUNTER--;
                         RANDOMIZE_SPEED = 1500;
                     }
@@ -642,9 +643,8 @@ public class EasyPlayGameActivity extends Activity {
                 totalPointsLost += POINTS_LOST;
         }
         playDeductionAnimation(totalPointsLost);
-        moneyValue -= totalPointsLost;
 
-        if (moneyValue <= 0) {
+        if (moneyValue - totalPointsLost <= 0) {
             running = false;
             System.out.println("SCORE " + scoreValue);
             editor.putInt("CurrentScore", scoreValue);
@@ -654,6 +654,7 @@ public class EasyPlayGameActivity extends Activity {
             startActivity(intent);
             finish();
         }
+        moneyValue -= totalPointsLost;
     }
 
     public void playDeductionAnimation(int totalPointsLost) {

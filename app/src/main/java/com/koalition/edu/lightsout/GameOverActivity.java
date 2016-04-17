@@ -72,6 +72,7 @@ public class GameOverActivity extends AppCompatActivity {
 
         int currentCoins = sharedPreferences.getInt("Coins", 0);
         editor.putInt("Coins", currentCoins + coinsReceived);
+        editor.apply();
 
 
 
