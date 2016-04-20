@@ -5,6 +5,7 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.app.Activity;
 import android.os.SystemClock;
@@ -28,6 +29,9 @@ public class DesignListActivity extends Activity {
 
     TextView playerBalance;
 
+
+    Typeface pixelFont;
+
     SharedPreferences sharedPreferences;
 
     @Override
@@ -48,6 +52,10 @@ public class DesignListActivity extends Activity {
         //brownoutPowerUpButtonOnClick = (ImageView) findViewById(R.id.brownout_powerup_clicked);
 
         playerBalance = (TextView) findViewById(R.id.player_balance);
+
+        pixelFont = Typeface.createFromAsset(getAssets(),"fonts/pixelmix.ttf");
+        playerBalance.setTypeface(pixelFont);
+
 
         /* hide onclick buttons**/
 //        freezePowerUpButtonOnClick.setVisibility(View.INVISIBLE);
@@ -86,7 +94,7 @@ public class DesignListActivity extends Activity {
                             playerBalance.setText(String.valueOf(sharedPreferences.getInt("Coins", 0)));
 
 
-                            Toast.makeText(getBaseContext(), "Obtained a Green House",
+                            Toast.makeText(getBaseContext(), "Obtained a Green House!",
                                     Toast.LENGTH_SHORT).show();
                         } else
                             Toast.makeText(getBaseContext(), "Not enough coins :(",
@@ -130,7 +138,7 @@ public class DesignListActivity extends Activity {
                             editor.apply();
                             playerBalance.setText(String.valueOf(sharedPreferences.getInt("Coins", 0)));
 
-                            Toast.makeText(getBaseContext(), "Obtained a Nipa Hut",
+                            Toast.makeText(getBaseContext(), "Obtained a Nipa Hut!",
                                     Toast.LENGTH_SHORT).show();
                         } else
                             Toast.makeText(getBaseContext(), "Not enough coins :(",

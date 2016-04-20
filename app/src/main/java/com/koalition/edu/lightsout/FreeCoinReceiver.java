@@ -17,7 +17,7 @@ import android.support.v4.app.NotificationCompat;
 public class FreeCoinReceiver extends BroadcastReceiver {
 
     static int count = 0; // replace this with values from your DB
-    final static int TIMER_SEC = 20;
+    final static int TIMER_SEC = 3600;
     final static int MA_PENDINGINTENT = 0;
     final static int NOTIF_ID = 0;
 

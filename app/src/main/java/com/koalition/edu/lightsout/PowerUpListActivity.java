@@ -5,6 +5,7 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.app.Activity;
 import android.os.SystemClock;
@@ -28,6 +29,8 @@ public class PowerUpListActivity extends Activity {
 
     TextView playerBalance;
 
+    Typeface pixelFont;
+
     SharedPreferences sharedPreferences;
 
     @Override
@@ -48,6 +51,9 @@ public class PowerUpListActivity extends Activity {
         brownoutPowerUpButtonOnClick = (ImageView) findViewById(R.id.brownout_powerup_clicked);
 
         playerBalance = (TextView) findViewById(R.id.player_balance);
+
+        pixelFont = Typeface.createFromAsset(getAssets(),"fonts/pixelmix.ttf");
+        playerBalance.setTypeface(pixelFont);
 
         /* hide onclick buttons**/
         freezePowerUpButtonOnClick.setVisibility(View.INVISIBLE);
@@ -81,7 +87,7 @@ public class PowerUpListActivity extends Activity {
                             playerBalance.setText(String.valueOf(sharedPreferences.getInt("Coins", 0)));
 
 
-                            Toast.makeText(getBaseContext(), "Obtained a Freeze Time powerup!"+ "\n current: "+ sharedPreferences.getInt("powerup1Count",0),
+                            Toast.makeText(getBaseContext(), "Obtained a Freeze Time powerup!",
                                     Toast.LENGTH_SHORT).show();
                         } else
                             Toast.makeText(getBaseContext(), "Not enough coins :(",
@@ -120,7 +126,7 @@ public class PowerUpListActivity extends Activity {
                             editor.apply();
                             playerBalance.setText(String.valueOf(sharedPreferences.getInt("Coins", 0)));
 
-                            Toast.makeText(getBaseContext(), "Obtained a Brownout powerup!" + "\n current: "+ sharedPreferences.getInt("powerup2Count",0),
+                            Toast.makeText(getBaseContext(), "Obtained a Brownout powerup!",
                                     Toast.LENGTH_SHORT).show();
                         } else
                             Toast.makeText(getBaseContext(), "Not enough coins :(",

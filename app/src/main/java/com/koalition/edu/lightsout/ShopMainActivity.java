@@ -5,6 +5,7 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.app.Activity;
 import android.os.SystemClock;
@@ -26,6 +27,8 @@ public class ShopMainActivity extends Activity {
     ImageView designButtonOnClick;
     TextView playerBalance;
 
+    Typeface pixelFont;
+
     SharedPreferences sharedPreferences;
 
     @Override
@@ -41,6 +44,9 @@ public class ShopMainActivity extends Activity {
         designButton = (ImageView) findViewById(R.id.design_button);
         designButtonOnClick = (ImageView) findViewById(R.id.design_button_clicked);
         playerBalance = (TextView) findViewById(R.id.player_balance);
+
+        pixelFont = Typeface.createFromAsset(getAssets(),"fonts/pixelmix.ttf");
+        playerBalance.setTypeface(pixelFont);
 
         /* hide onclick buttons**/
         powerUpButtonOnClick.setVisibility(View.INVISIBLE);

@@ -5,6 +5,7 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -35,6 +36,9 @@ public class GameOverActivity extends AppCompatActivity {
     SharedPreferences sharedPreferences;
 
 
+    Typeface pixelFont;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +52,11 @@ public class GameOverActivity extends AppCompatActivity {
         playAgainButton = (ImageView) findViewById(R.id.play_again_button);
         playAgainButtonClicked = (ImageView) findViewById(R.id.play_again_button_clicked);
         coinsReceivedText = (TextView) findViewById(R.id.coins_received_text);
+
+        pixelFont = Typeface.createFromAsset(getAssets(),"fonts/pixelmix.ttf");
+        score.setTypeface(pixelFont);
+        coinsReceivedText.setTypeface(pixelFont);
+
 
         /* hide onclick buttons**/
         backToMainButtonClicked.setVisibility(View.INVISIBLE);

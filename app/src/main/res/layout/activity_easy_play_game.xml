@@ -112,11 +112,11 @@
         android:layout_toEndOf="@+id/easy_button3" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:text="0"
         android:textColor="#fafaf9"
-        android:textSize="40sp"
+        android:textSize="30sp"
         android:layout_alignParentTop="true"
         android:id="@+id/tv_easy_score"
         android:layout_alignStart="@+id/easy_button4"
@@ -157,11 +157,11 @@
         android:layout_alignStart="@+id/iv_freeze_time" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="70dp"
         android:layout_height="wrap_content"
         android:text="100"
         android:textColor="#fafaf9"
-        android:textSize="40sp"
+        android:textSize="30sp"
         android:id="@+id/tv_money"
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/iv_money_label"
@@ -173,7 +173,7 @@
         android:layout_height="wrap_content"
         android:text="-1"
         android:textColor="#f0f079"
-        android:textSize="30sp"
+        android:textSize="20sp"
         android:id="@+id/tv_deduction"
         android:layout_below="@+id/iv_money_label"
         android:layout_alignEnd="@+id/iv_money_label" />
@@ -181,19 +181,19 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
+        android:text="20"
         android:textColor="#fafaf9"
-        android:textSize="30sp"
+        android:textSize="25sp"
         android:id="@+id/tv_freeze_count"
-        android:layout_alignBottom="@+id/iv_freeze_time"
-        android:layout_alignStart="@+id/tv_deduction" />
+        android:layout_alignTop="@+id/easy_room3"
+        android:layout_toEndOf="@+id/tv_deduction" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
+        android:text="20"
         android:textColor="#fafaf9"
-        android:textSize="30sp"
+        android:textSize="25sp"
         android:id="@+id/tv_brown_out_count"
         android:layout_alignBottom="@+id/easy_house"
         android:layout_alignStart="@+id/tv_freeze_count" />

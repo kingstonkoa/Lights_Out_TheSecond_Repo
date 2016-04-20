@@ -68,7 +68,7 @@ public class MediumPlayGameActivity extends Activity {
     int RANDOMIZE_COUNTER = 1;
     static int POINTS_LOST = 1;
     static int POINTS_GAINED = 20;
-    static int POSSIBLE_LIGHTS_ON = 3;
+    static int POSSIBLE_LIGHTS_ON = 2;
     static int STARTING_COINS = 150;
 
     int currentDesign;
@@ -677,7 +677,8 @@ public class MediumPlayGameActivity extends Activity {
                         //randomizeAllRoomStatus();
                         refreshSwitches();
                         RANDOMIZE_COUNTER--;
-                        RANDOMIZE_SPEED = 1300;
+                        RANDOMIZE_SPEED = 1000;
+                        POSSIBLE_LIGHTS_ON = 3;
                     }
                 }
 

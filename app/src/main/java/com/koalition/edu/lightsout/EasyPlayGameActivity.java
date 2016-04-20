@@ -4,6 +4,7 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
@@ -47,6 +48,7 @@ public class EasyPlayGameActivity extends Activity {
     TextView deductionTextView;
     TextView freezeTimeCountTextView;
     TextView brownoutCountTextView;
+    Typeface pixelFont;
 
     ImageView freezeScreenImageView;
     Animation freezeFadeoutAnim;
@@ -60,11 +62,11 @@ public class EasyPlayGameActivity extends Activity {
 
     // GAME VARIABLES
     // timer for randomizing every randomizeSpeed
-    static int RANDOMIZE_SPEED = 2500;
+    static int RANDOMIZE_SPEED = 1500;
     int RANDOMIZE_COUNTER = 1;
     static int POINTS_LOST = 1;
     static int POINTS_GAINED = 10;
-    static int POSSIBLE_LIGHTS_ON = 2;
+    static int POSSIBLE_LIGHTS_ON = 1;
     static int STARTING_COINS = 100;
 
 
@@ -128,6 +130,14 @@ public class EasyPlayGameActivity extends Activity {
         freezeTimeCountTextView = (TextView) findViewById(R.id.tv_freeze_count);
         brownoutCountTextView = (TextView) findViewById(R.id.tv_brown_out_count);
         deductionTextView = (TextView) findViewById(R.id.tv_deduction);
+
+        pixelFont = Typeface.createFromAsset(getAssets(),"fonts/pixelmix.ttf");
+        moneyTextView.setTypeface(pixelFont);
+        scoreTextView.setTypeface(pixelFont);
+        freezeTimeCountTextView.setTypeface(pixelFont);
+        brownoutCountTextView.setTypeface(pixelFont);
+        deductionTextView.setTypeface(pixelFont);
+
 
 
         slideDownAnim = AnimationUtils.loadAnimation(getBaseContext(), R.anim.slide_down_deduction);
@@ -607,7 +617,8 @@ public class EasyPlayGameActivity extends Activity {
                         //randomizeAllRoomStatus();
                         refreshSwitches();
                         RANDOMIZE_COUNTER--;
-                        RANDOMIZE_SPEED = 1500;
+                        RANDOMIZE_SPEED = 1000;
+                        POSSIBLE_LIGHTS_ON = 2;
                     }
                 }
 

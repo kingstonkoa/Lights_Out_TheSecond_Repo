@@ -173,7 +173,7 @@
         android:layout_alignStart="@+id/iv_freeze_time" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="70dp"
         android:layout_height="wrap_content"
         android:text="100"
         android:textColor="#fafaf9"
@@ -197,17 +197,17 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
+        android:text="20"
         android:textColor="#fafaf9"
         android:textSize="30sp"
         android:id="@+id/tv_freeze_count"
         android:layout_alignBottom="@+id/iv_freeze_time"
-        android:layout_alignStart="@+id/tv_deduction" />
+        android:layout_toEndOf="@+id/tv_deduction" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
+        android:text="20"
         android:textColor="#fafaf9"
         android:textSize="30sp"
         android:id="@+id/tv_brown_out_count"
